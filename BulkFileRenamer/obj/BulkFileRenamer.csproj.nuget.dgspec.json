@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/omarebrahim/Projects/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer/BulkFileRenamer.csproj": {}
+    "/Users/omarebrahim/repos/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer.csproj": {}
   },
   "projects": {
-    "/Users/omarebrahim/Projects/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer/BulkFileRenamer.csproj": {
+    "/Users/omarebrahim/repos/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/omarebrahim/Projects/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer/BulkFileRenamer.csproj",
+        "projectUniqueName": "/Users/omarebrahim/repos/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer.csproj",
         "projectName": "BulkFileRenamer",
-        "projectPath": "/Users/omarebrahim/Projects/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer/BulkFileRenamer.csproj",
+        "projectPath": "/Users/omarebrahim/repos/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer.csproj",
         "packagesPath": "/Users/omarebrahim/.nuget/packages/",
-        "outputPath": "/Users/omarebrahim/Projects/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer/obj/",
+        "outputPath": "/Users/omarebrahim/repos/bulk-file-renamer/BulkFileRenamer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/omarebrahim/.config/NuGet/NuGet.Config"

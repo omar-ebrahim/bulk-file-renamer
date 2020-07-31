@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{DCF58820-BA49-4641-AB4F-BEFA4E2AD879}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BulkFileRenamer/Program.cs">
+    <Files>
+      <File FileName="BulkFileRenamer/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BulkFileRenamer" expanded="True">
+            <Node name="BulkFileRenamer" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.BulkFileRenamer PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

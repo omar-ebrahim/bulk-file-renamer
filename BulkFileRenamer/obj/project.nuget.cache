@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0Q5nJrER7JOBeK7iSkw0QmE+V6C8ywyhG2qOK0FVpqR4BqUi6YVfYBC5z13yHlwQj5Mjq1W288yhM+olHlUcxQ==",
+  "dgSpecHash": "skSmWpiPg2dgCW//ixFlD/Y6hy66U9dAhk1rcKgab1KX0GdiumPU8mZhr+Qmpwe3CyBvDEeLVo35SwKPm9ePLQ==",
   "success": true,
-  "projectFilePath": "/Users/omarebrahim/Projects/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer/BulkFileRenamer.csproj",
+  "projectFilePath": "/Users/omarebrahim/repos/bulk-file-renamer/BulkFileRenamer/BulkFileRenamer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
