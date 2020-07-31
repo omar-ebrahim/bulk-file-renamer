@@ -1,0 +1,12 @@
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/bin/Debug/netcoreapp3.1/BulkFileRenamer.deps.json
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/bin/Debug/netcoreapp3.1/BulkFileRenamer.runtimeconfig.json
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/bin/Debug/netcoreapp3.1/BulkFileRenamer.runtimeconfig.dev.json
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/bin/Debug/netcoreapp3.1/BulkFileRenamer.dll
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/bin/Debug/netcoreapp3.1/BulkFileRenamer.pdb
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/obj/Debug/netcoreapp3.1/BulkFileRenamer.csprojAssemblyReference.cache
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/obj/Debug/netcoreapp3.1/BulkFileRenamer.AssemblyInfoInputs.cache
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/obj/Debug/netcoreapp3.1/BulkFileRenamer.AssemblyInfo.cs
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/obj/Debug/netcoreapp3.1/BulkFileRenamer.csproj.CoreCompileInputs.cache
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/obj/Debug/netcoreapp3.1/BulkFileRenamer.dll
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/obj/Debug/netcoreapp3.1/BulkFileRenamer.pdb
+/Users/omarebrahim/Projects/BulkFileRenamer/BulkFileRenamer/obj/Debug/netcoreapp3.1/BulkFileRenamer.genruntimeconfig.cache
