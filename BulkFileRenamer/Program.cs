@@ -105,17 +105,8 @@ namespace BulkFileRenamer
             Console.ReadLine();
 
             DirectoryInfo createdDirectory = FileUtils.CreateSubdirectory(outputDirectory);
-            int index = 0;
 
-            foreach (FileInfo[] fileList in filesToRename)
-            {
-                foreach (FileInfo file in fileList)
-                {
-                    File.Copy(file.FullName, Path.Combine(createdDirectory.FullName, $"{newFileName}_{index}{file.Extension}"));
-                    Console.WriteLine($"Copied {file.FullName} to {createdDirectory.FullName} as {newFileName}_{index}{file.Extension}");
-                    index++;
-                }
-            }
+            FileUtils.RenameFiles(filesToRename, createdDirectory, newFileName);
 
             Console.WriteLine("Done! Press any key to exit the application.");
             Console.Read();
