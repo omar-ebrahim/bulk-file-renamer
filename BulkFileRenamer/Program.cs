@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BulkFileRenamer.Utils;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,25 +12,52 @@ namespace BulkFileRenamer
         {
             var doneEnteringPaths = false;
             List<string> filePaths = new List<string>();
+            List<FileInfo[]> filesToRename;
 
             Console.WriteLine("Bulk file renamer");
             Console.WriteLine("-------------------------");
 
             while (!doneEnteringPaths)
             {
-                var message = $"{(filePaths.Any() ? "Paste another directory" : "Enter a directory")} and hit Enter, or type Y or y to confirm";
+                var message = $"{(filePaths.Any() ? "Paste another directory" : "Enter a directory")} and hit Enter, or type Y or y to confirm, or X or x to exit and hit Enter.";
                 Console.WriteLine(message);
-                var path = Console.ReadLine();
-                if (path.ToUpper() == "Y")
+                var path = Console.ReadLine().Trim().TrimEnd('\\').TrimEnd('/');
+                if (path.ToUpper() == "X")
                 {
+                    return; // leave the application
+                }
+                else if (path.ToUpper() == "Y")
+                {
+                    if (!filePaths.Any())
+                    {
+                        Console.WriteLine("You have not entered any paths.");
+                        continue;
+                    }
                     doneEnteringPaths = true;
                 }
                 else
                 {
-                    // Validate path
-                    if (!Directory.Exists(path))
+                    if (string.IsNullOrWhiteSpace(path))
                     {
+                        Console.WriteLine("You have not entered a path");
+                        continue;
+                    }
+                    else if (path.IndexOfAny(Path.GetInvalidPathChars()) > 0 || !Directory.Exists(path))
+                    {
+                        // Path.GetInvalidPathChars() does not return any characters
+                        // on MacOS but will in Windows so check both
                         Console.WriteLine("Invalid directory path");
+                        continue;
+                    }
+                    else if (FileUtils.PathIsRoot(path))
+                    {
+                        Console.WriteLine("This path is root, cannot use root drive");
+                        continue;
+                    }
+                    else if (filePaths.Any(x => x == path))
+                    {
+                        
+                        Console.WriteLine("You have already added this path");
                         continue;
                     }
                     else
@@ -39,12 +67,35 @@ namespace BulkFileRenamer
                 }
             }
 
-            Console.WriteLine("Reading in files");
-            foreach (var path in filePaths)
+            Console.WriteLine("Reading in files...");
+            filesToRename = FileUtils.GetFiles(filePaths).ToList();
+
+            Console.WriteLine($"Files read in. {filesToRename.Sum(x => x.Count())}");
+            Console.WriteLine("Specify a directory to output the files to. This must be different to the retrieval directories");
+            Console.WriteLine("The specified output directory does not need to exist. This will be created automatically.");
+
+            bool validOutputDirectory = false;
+            string outputDirectory = "";
+            while (!validOutputDirectory)
             {
-                var files = new DirectoryInfo(path).GetFiles();
+                outputDirectory = Console.ReadLine();
+                validOutputDirectory = !filePaths.Any(x => x == outputDirectory);
             }
-            
+
+            Console.WriteLine($"The output directory is {outputDirectory}");
+            Console.WriteLine("Enter a name to rename all the files to");
+            Console.WriteLine("Every file will be renamed to [currentIndex]_[selectedFileName].extension");
+
+            bool isValidOutputName = false;
+            while (!isValidOutputName)
+            {
+                var name = Console.ReadLine();
+                if (!FileUtils.NewFilenameIsValid(name))
+                {
+                    Console.WriteLine($"Filename is not valid. Enter a valid filename. This cannot contain the following characters: {Path.GetInvalidFileNameChars()}");
+                }
+            }
+
         }
     }
 }
