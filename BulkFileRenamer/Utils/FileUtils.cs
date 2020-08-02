@@ -54,5 +54,19 @@ namespace BulkFileRenamer.Utils
             var directory = Directory.CreateDirectory(directoryPath);
             return directory.CreateSubdirectory(DateTime.Now.ToString("YYYY-MM-dd_HH-mm-SS"));
         }
+
+        public static void RenameFiles(IEnumerable<FileInfo[]> filesToRename, DirectoryInfo createdDirectory, string newFileName)
+        {
+            int index = 0;
+            foreach (FileInfo[] fileList in filesToRename)
+            {
+                foreach (FileInfo file in fileList)
+                {
+                    File.Copy(file.FullName, Path.Combine(createdDirectory.FullName, $"{newFileName}_{index}{file.Extension}"));
+                    Console.WriteLine($"Copied {file.FullName} to {createdDirectory.FullName} as {newFileName}_{index}{file.Extension}");
+                    index++;
+                }
+            }
+        }
     }
 }
