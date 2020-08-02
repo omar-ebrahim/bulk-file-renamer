@@ -56,7 +56,7 @@ namespace BulkFileRenamer
                     }
                     else if (filePaths.Any(x => x == path))
                     {
-                        
+
                         Console.WriteLine("You have already added this path");
                         continue;
                     }
@@ -87,15 +87,38 @@ namespace BulkFileRenamer
             Console.WriteLine("Every file will be renamed to [currentIndex]_[selectedFileName].extension");
 
             bool isValidOutputName = false;
+            string newFileName = "";
             while (!isValidOutputName)
             {
-                var name = Console.ReadLine();
-                if (!FileUtils.NewFilenameIsValid(name))
+                newFileName = Console.ReadLine();
+                if (!FileUtils.NewFilenameIsValid(newFileName.Trim()))
                 {
                     Console.WriteLine($"Filename is not valid. Enter a valid filename. This cannot contain the following characters: {Path.GetInvalidFileNameChars()}");
                 }
+                else
+                {
+                    isValidOutputName = true;
+                }
             }
 
+            Console.WriteLine("Press Enter to start the bulk rename");
+            Console.ReadLine();
+
+            DirectoryInfo createdDirectory = FileUtils.CreateSubdirectory(outputDirectory);
+            int index = 0;
+
+            foreach (FileInfo[] fileList in filesToRename)
+            {
+                foreach (FileInfo file in fileList)
+                {
+                    File.Copy(file.FullName, Path.Combine(createdDirectory.FullName, $"{newFileName}_{index}{file.Extension}"));
+                    Console.WriteLine($"Copied {file.FullName} to {createdDirectory.FullName} as {newFileName}_{index}{file.Extension}");
+                    index++;
+                }
+            }
+
+            Console.WriteLine("Done! Press any key to exit the application.");
+            Console.Read();
         }
     }
 }
