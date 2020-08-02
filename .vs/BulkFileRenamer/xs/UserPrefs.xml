@@ -1,8 +1,13 @@
 ﻿<Properties StartupConfiguration="{90FBB4C8-75A0-4322-A00B-01DC21C68E4B}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="BulkFileRenamer/Program.cs">
     <Files>
+<<<<<<< Updated upstream
       <File FileName="BulkFileRenamer/Program.cs" Line="121" Column="28" />
       <File FileName="BulkFileRenamer/Utils/FileUtils.cs" Line="51" Column="92" />
+=======
+      <File FileName="BulkFileRenamer/Program.cs" Line="28" Column="18" />
+      <File FileName="BulkFileRenamer/Utils/FileUtils.cs" />
+>>>>>>> Stashed changes
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
