@@ -389,3 +389,5 @@ MigrationBackup/
 .vs/BulkFileRenamer/xs/project-cache/BulkFileRenamer-Debug.json
 .vs/BulkFileRenamer/xs/UserPrefs.xml
 .vs/BulkFileRenamer/xs/UserPrefs.xml
+.vs/BulkFileRenamer/xs/UserPrefs.xml
+.DS_Store
