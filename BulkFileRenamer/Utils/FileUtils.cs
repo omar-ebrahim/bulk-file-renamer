@@ -33,16 +33,7 @@ namespace BulkFileRenamer.Utils
         /// <param name="name">New file name</param>
         public static bool NewFilenameIsValid(string name)
         {
-            if (string.IsNullOrEmpty(name))
-            {
-                return false;
-            }
-            else if (name.IndexOfAny(Path.GetInvalidFileNameChars()) > 0)
-            {
-                return false;
-            }
-
-            return true;
+            return !(name.IndexOfAny(Path.GetInvalidFileNameChars()) > 0);
         }
 
         /// <summary>

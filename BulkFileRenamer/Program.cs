@@ -15,7 +15,6 @@ namespace BulkFileRenamer
             List<FileInfo[]> filesToRename;
 
             Console.WriteLine("Bulk file renamer");
-            Console.WriteLine("-------------------------");
 
             while (!doneEnteringPaths)
             {
@@ -91,14 +90,20 @@ namespace BulkFileRenamer
             while (!isValidOutputName)
             {
                 newFileName = Console.ReadLine();
-                if (!FileUtils.NewFilenameIsValid(newFileName.Trim()))
+
+                if (string.IsNullOrWhiteSpace(newFileName))
                 {
-                    Console.WriteLine($"Filename is not valid. Enter a valid filename. This cannot contain the following characters: {Path.GetInvalidFileNameChars()}");
+                    Console.WriteLine("You have not entered a name");
+                }
+                else if (!FileUtils.NewFilenameIsValid(newFileName.Trim()))
+                {
+                    Console.WriteLine($"Filename is not valid. Enter a valid filename. This cannot contain the following characters: {string.Join(", ", Path.GetInvalidFileNameChars())}");
                 }
                 else
                 {
                     isValidOutputName = true;
                 }
+
             }
 
             Console.WriteLine("Press Enter to start the bulk rename");
